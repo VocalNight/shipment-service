@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using shipment_service.Data;
+
 namespace shipment_service
 {
     public class Program
@@ -8,6 +11,9 @@ namespace shipment_service
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<AppDbContext>(options =>
+             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
