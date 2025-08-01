@@ -12,7 +12,8 @@
         public string StartLocation { get; set; } = string.Empty;
         public string EndLocation { get; set; } = string.Empty;
         public ShipmentStatus Status { get; set; } = ShipmentStatus.Pending;
-        public int? ClientId { get; set; }
+        public int? AssignedVehicleId { get; set; }
+        public int ClientId { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
     }
